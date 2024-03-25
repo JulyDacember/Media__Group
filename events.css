@@ -1,0 +1,577 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+    font-family: 'Open Sans', 'Arial', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+    background-color: rgb(139, 65, 176);
+}
+
+@media (min-width: 1200px) {
+    
+    /* меню*/
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagination{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        
+       
+        
+       }
+       menu {
+        border-radius: 10px;
+        height: 80px;
+        width: 1000px;
+        display: inline-flex;
+        background-color: rgb(255, 255, 255);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        align-items: center;
+        padding: 0 10px;
+        margin: 20px 0 0 0;
+}
+
+.home, .events, .team, .contacts {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-weight: bold;
+    
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* меню*/
+
+/*Модальное окно*/
+.overlay {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    z-index: 1;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    /*Фиксированное положение и изначально элемент не видно*/
+    visibility: hidden;
+    position: fixed;
+    z-index: 10;
+    display: block;
+    /*полная прозрачность блока, появление при клике*/
+    opacity: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    font-size: 0;
+    margin: 0 auto;
+    width: 90%;
+    min-width: 320px;
+    max-width: 600px;
+    height: 60%;
+    padding: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    /* внешняя тень блока */
+   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+   -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+   -o-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+   -webkit-transition: all ease .5s;
+   -moz-transition: all ease .5s;
+   -ms-transition: all ease .5s;
+   -o-transition: all ease .5s;
+   transition: all ease .5s;
+}
+
+/* активируем появление окна и затемнение фона */
+.overlay:target+.popup {
+    top: 20%; /* положение окна от верха страницы при появлении */
+    visibility: visible;
+    opacity: 1; /* убираем прозрачность */
+}
+
+/*Модальное окно*/
+.katigori {
+    display: flex;
+    justify-content: center;
+
+}
+.slider__k {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    list-style-type: none;
+    width: 100%;
+    height: 60px;
+}
+
+.concert, .galery, .all {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28%;
+    height: 60px;
+    border-radius: 50px;
+    background-color: #efefef50;
+    margin: 5px;
+    font-weight: bold;
+    color: #efefef;
+}
+.concert__a, .galery__a, .all__a {
+    font-weight: bold;
+    color: #efefef;
+}
+
+
+
+/*Слайдер событий*/
+
+.events__s {
+    width: 100%;
+    display: flex;
+    margin: 0;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    margin: 0;
+    width: 100%;
+    height: 600px;
+    
+}
+
+.even1 {
+    margin: 20px;
+    width:900px;
+    height: 500px;
+    background-color: #efefef;
+    border-radius: 20px;
+    box-shadow: 0px 15px 20px 0px rgba(56, 63, 72, 0.292);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+
+}
+.even {
+    margin: 20px;
+    width:900px;
+    height: 500px;
+    background-color: #fdfcfc56;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding: 5px;
+
+}
+
+.prev__a, .prev__b, .prev__c {
+    width:60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+ 
+h1 {
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: bold;
+}
+
+.b {
+    color: #efefef;
+}
+/*Слайдер событий*/
+
+
+
+
+}
+
+@media (min-width : 768px) and (max-width : 1200px) {
+
+
+    /* меню*/
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagination{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        
+       
+        
+       }
+       menu {
+        border-radius: 10px;
+        height: 75px;
+        width: 550px;
+        display: inline-flex;
+        background-color: rgb(255, 255, 255);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        align-items: center;
+        padding: 0 10px;
+        margin: 20px 0 0 0;
+        /* меню*/     
+}   
+
+.home, .events, .team, .contacts {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-weight: bold;
+    
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+/*Модальное окно*/
+.overlay {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    z-index: 1;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    /*Фиксированное положение и изначально элемент не видно*/
+    visibility: hidden;
+    position: fixed;
+    z-index: 10;
+    display: block;
+    /*полная прозрачность блока, появление при клике*/
+    opacity: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    font-size: 0;
+    margin: 0 auto;
+    width: 90%;
+    min-width: 320px;
+    max-width: 600px;
+    height: 50%;
+    padding: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    /* внешняя тень блока */
+   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+   -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+   -o-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+   -webkit-transition: all ease .5s;
+   -moz-transition: all ease .5s;
+   -ms-transition: all ease .5s;
+   -o-transition: all ease .5s;
+   transition: all ease .5s;
+}
+
+/* активируем появление окна и затемнение фона */
+.overlay:target+.popup {
+    top: 20%; /* положение окна от верха страницы при появлении */
+    visibility: visible;
+    opacity: 1; /* убираем прозрачность */
+}
+
+/*Модальное окно*/
+
+}
+
+@media (min-width : 360px) and (max-width : 768px) {
+    
+    /* меню*/
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagination{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        
+       
+        
+       }
+       menu {
+        border-radius: 10px;
+        height: 65px;
+        width: 350px;
+        display: inline-flex;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 15px 20px 0px rgba(56, 63, 72, 0.199);
+        align-items: center;
+        padding: 0 10px;
+        margin: 20px 0 20px 0;
+        
+}
+
+.home, .events, .team, .contacts {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-weight: bold;
+    
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* меню*/
+.katigori {
+    display: flex;
+    justify-content: center;
+
+}
+.slider__k {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+    height: 60px;
+}
+
+.concert, .galery, .all {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28%;
+    height: 60px;
+    border-radius: 50px;
+    background-color: #efefef50;
+    margin: 5px;
+    font-weight: bold;
+    color: #efefef;
+}
+.concert__a, .galery__a, .all__a {
+    font-weight: bold;
+    color: #efefef;
+}
+
+
+
+/*Слайдер событий*/
+
+.events__s {
+    width: 100%;
+    display: flex;
+    margin: 0;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    margin: 0;
+    width: 100%;
+    height: 600px;
+    
+}
+
+.even1 {
+    margin: 20px;
+    width: 300px;
+    height: 500px;
+    background-color: #efefef;
+    border-radius: 20px;
+    box-shadow: 0px 15px 20px 0px rgba(56, 63, 72, 0.292);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+
+}
+.even {
+    margin: 20px;
+    width: 300px;
+    height: 500px;
+    background-color: #fdfcfc56;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding: 5px;
+
+}
+
+.prev__a, .prev__b, .prev__c {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+ 
+h1 {
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: bold;
+}
+
+.b {
+    color: #efefef;
+}
+/*Слайдер событий*/
+
+
+/*Модальное окно*/
+.overlay {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    z-index: 1;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    /*Фиксированное положение и изначально элемент не видно*/
+    visibility: hidden;
+    position: fixed;
+    z-index: 10;
+    display: block;
+    /*полная прозрачность блока, появление при клике*/
+    opacity: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    font-size: 0;
+    margin: 0 auto;
+    width: 90%;
+    min-width: 300px;
+    max-width: 600px;
+    height: 50%;
+    padding: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    /* внешняя тень блока */
+   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+   -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+   -o-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+   -webkit-transition: all ease .5s;
+   -moz-transition: all ease .5s;
+   -ms-transition: all ease .5s;
+   -o-transition: all ease .5s;
+   transition: all ease .5s;
+}
+
+/* активируем появление окна и затемнение фона */
+.overlay:target+.popup {
+    top: 20%; /* положение окна от верха страницы при появлении */
+    visibility: visible;
+    opacity: 1; /* убираем прозрачность */
+}
+
+/*Модальное окно*/
+
+
+}
